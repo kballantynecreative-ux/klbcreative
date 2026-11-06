@@ -1,7 +1,7 @@
 # Settings for the admin page at klbcreative.net/admin
 backend:
   name: github
-  repo: YOUR-GITHUB-USERNAME/klbcreative   # <- change this (see SETUP-GUIDE)
+  repo: kballantynecreative-ux/klbcreativee   # <- change this (see SETUP-GUIDE)
   branch: main
 
 media_folder: images
