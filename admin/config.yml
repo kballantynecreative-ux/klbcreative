@@ -1,0 +1,35 @@
+# Settings for the admin page at klbcreative.net/admin
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/klbcreative   # <- change this (see SETUP-GUIDE)
+  branch: main
+
+media_folder: images
+public_folder: /images
+
+collections:
+  - name: paintings
+    label: Paintings
+    files:
+      - name: paintings
+        label: All paintings
+        file: content/paintings.json
+        format: json
+        fields:
+          - label: Paintings
+            name: paintings
+            widget: list
+            label_singular: painting
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Medium, name: medium, widget: string, default: acrylic on canvas, hint: "Shown before the size, e.g. acrylic on canvas" }
+              - { label: Size, name: size, widget: string, required: false, hint: 'Example: 30” x 30”' }
+              - { label: Price, name: price, widget: string, required: false, hint: "Example: $900. Leave blank to show 'price on request'." }
+              - { label: Sold, name: sold, widget: boolean, default: false, hint: "Turn on to show SOLD instead of the price." }
+              - label: Photos
+                name: photos
+                widget: list
+                label_singular: photo
+                hint: "The first photo is the one shown on the page. Drag to reorder."
+                field: { label: Photo, name: photo, widget: image }

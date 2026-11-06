@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>klb.creative — setup guide</title>
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Helvetica,Arial,sans-serif;max-width:720px;margin:40px auto;padding:0 20px;line-height:1.6;color:#211F1A;background:#F6F4EC}
+h1{font-size:1.9rem} h2{margin-top:2.2em;border-top:1px solid #C7C0AC;padding-top:1em} h3{margin-bottom:.2em}
+code{background:#E4E0D3;padding:1px 6px;border-radius:3px} .note{background:#E4E0D3;padding:12px 16px;border-left:4px solid #45594F}
+li{margin:.4em 0}
+</style></head><body>
+<h1>Your website: setup guide</h1>
+<p>You do Part 1 <strong>once</strong> (about 30–45 minutes). After that you only use Part 2, which is a simple form.</p>
+
+<h2>Part 1: one-time setup</h2>
+
+<h3>Step 1. Make a free GitHub account</h3>
+<p>Go to <code>github.com</code> and sign up. GitHub is just a safe folder on the internet where your website files live. It is free. Remember your <strong>username</strong>.</p>
+
+<h3>Step 2. Make a place for your website</h3>
+<ol>
+<li>Click the <strong>+</strong> at the top right, then <strong>New repository</strong>.</li>
+<li>Name it <code>klbcreative</code>. Choose <strong>Public</strong> (your website is public anyway). Click <strong>Create repository</strong>.</li>
+</ol>
+
+<h3>Step 3. Upload your website files</h3>
+<ol>
+<li>Unzip the folder I gave you on your computer.</li>
+<li>On your new repository page, click <strong>uploading an existing file</strong>.</li>
+<li>Open the unzipped folder and drag <strong>everything inside it</strong> (the <code>admin</code>, <code>content</code> and <code>images</code> folders, plus <code>index.html</code> and <code>CNAME</code>) into the browser window. Wait for the upload to finish.</li>
+<li>Click <strong>Commit changes</strong> at the bottom.</li>
+</ol>
+
+<h3>Step 4. Tell the admin form which account is yours</h3>
+<ol>
+<li>In your repository, click the <code>admin</code> folder, then <code>config.yml</code>.</li>
+<li>Click the pencil icon (edit).</li>
+<li>Find <code>YOUR-GITHUB-USERNAME/klbcreative</code> and replace <code>YOUR-GITHUB-USERNAME</code> with your real GitHub username. Click <strong>Commit changes</strong>.</li>
+</ol>
+
+<h3>Step 5. Turn the website on</h3>
+<ol>
+<li>In your repository click <strong>Settings</strong>, then <strong>Pages</strong> (left side).</li>
+<li>Under "Build and deployment", choose <strong>Deploy from a branch</strong>, branch <code>main</code>, folder <code>/ (root)</code>, then <strong>Save</strong>.</li>
+<li>After a minute or two, a link like <code>yourusername.github.io/klbcreative</code> appears. Your site is live there.</li>
+</ol>
+
+<h3>Step 6. Use your own domain, klbcreative.net</h3>
+<ol>
+<li>On the same Pages screen, type <code>klbcreative.net</code> under <strong>Custom domain</strong> and click Save.</li>
+<li>Log in to the company where you bought your domain (GoDaddy, Namecheap, Shopify, etc.) and open its <strong>DNS settings</strong>.</li>
+<li>Delete any old records that point to Shopify. Add four <strong>A</strong> records for <code>@</code> pointing to: <code>185.199.108.153</code>, <code>185.199.109.153</code>, <code>185.199.110.153</code>, <code>185.199.111.153</code>. Add one <strong>CNAME</strong> record for <code>www</code> pointing to <code>yourusername.github.io</code>.</li>
+<li>Wait (from a few minutes up to a day). Back on the GitHub Pages screen, tick <strong>Enforce HTTPS</strong> when it becomes available.</li>
+</ol>
+<p class="note">Check these numbers against GitHub's own help page (search "GitHub Pages custom domain apex") in case they have changed. If you get stuck on this step, tell me which company holds your domain and I will walk you through it.</p>
+
+<h3>Step 7. Make your key for the admin form</h3>
+<ol>
+<li>On GitHub click your picture (top right), then <strong>Settings</strong>, then at the bottom left <strong>Developer settings</strong>, then <strong>Personal access tokens</strong>, then <strong>Fine-grained tokens</strong>, then <strong>Generate new token</strong>.</li>
+<li>Name it <code>website</code>. Choose the longest expiration offered.</li>
+<li>Under <strong>Repository access</strong> choose <strong>Only select repositories</strong> and pick <code>klbcreative</code>.</li>
+<li>Under <strong>Permissions</strong>, open <strong>Repository permissions</strong>, find <strong>Contents</strong> and set it to <strong>Read and write</strong>.</li>
+<li>Click <strong>Generate token</strong> and copy it. <strong>Save it somewhere safe</strong> (a password manager or a private note). GitHub only shows it once. Treat it like a password.</li>
+</ol>
+<p>When the token expires, make a new one the same way.</p>
+
+<h2>Part 2: adding or changing a painting (every time after)</h2>
+<ol>
+<li>Go to <code>klbcreative.net/admin</code>.</li>
+<li>The first time, choose to sign in with GitHub using a <strong>token</strong> and paste your key.</li>
+<li>Click <strong>Paintings</strong>, then <strong>All paintings</strong>.</li>
+<li>To add: click <strong>Add painting</strong>. Type the title, size and price, upload photos, and switch on <strong>Sold</strong> when it sells.</li>
+<li>To change one (new price, mark sold, swap a photo): click it, edit, done.</li>
+<li>Click <strong>Save</strong> or <strong>Publish</strong>. Your site updates in about 1–2 minutes (refresh the page to see it).</li>
+</ol>
+<p><strong>Photo tip:</strong> phone photos are very large and slow the site down. Before uploading, shrink them to about 1600 pixels wide (the Photos app, or the free site <code>squoosh.app</code>, can do this).</p>
+<p>The <strong>first photo</strong> in the list is the one shown on the page. Visitors click it to see all the others.</p>
+
+<h2>Other things you can do</h2>
+<ul>
+<li><strong>Change the colors:</strong> in GitHub open <code>index.html</code>, click the pencil, and near the top you will see the site's colors: <code>--bg</code> (cream), <code>--paper</code> (white), <code>--ink</code> (black) and <code>--accent</code> (green, currently <code>#9CA812</code>, matched to your logo; <code>--accent-text</code> is a darker version of it used for small green text). Change the code after any of them, then Commit changes.</li>
+<li><strong>Make the contact form send you email:</strong> sign up free at <code>formspree.io</code>, make a form, and replace <code>YOUR_FORM_ID</code> in <code>index.html</code> with your form's ID. Until then, "send" opens the visitor's email app.</li>
+<li><strong>Undo a mistake:</strong> GitHub keeps every earlier version. Ask me and I will show you how to go back.</li>
+</ul>
+</body></html>

@@ -1,0 +1,59 @@
+{
+  "paintings": [
+    {
+      "title": "Blue Point",
+      "medium": "acrylic on canvas",
+      "size": "46” x 46”",
+      "price": "$2,400",
+      "sold": false,
+      "photos": [
+        "/images/blue-point-1.jpg",
+        "/images/blue-point-2.jpg"
+      ]
+    },
+    {
+      "title": "Kool Aid",
+      "medium": "acrylic on canvas triptych",
+      "size": "12” x 24” panels / 24” x 36” overall",
+      "price": "$900",
+      "sold": false,
+      "photos": [
+        "/images/kool-aid-1.jpg",
+        "/images/kool-aid-2.jpg"
+      ]
+    },
+    {
+      "title": "Fields of Gold",
+      "medium": "acrylic on canvas",
+      "size": "30” x 30”",
+      "price": "$900",
+      "sold": false,
+      "photos": [
+        "/images/fields-of-gold-1.jpg",
+        "/images/fields-of-gold-2.jpg",
+        "/images/fields-of-gold-3.jpg"
+      ]
+    },
+    {
+      "title": "FLO",
+      "medium": "acrylic on canvas",
+      "size": "43” x 36”",
+      "price": "",
+      "sold": true,
+      "photos": [
+        "/images/flo-1.jpg",
+        "/images/flo-2.jpg"
+      ]
+    },
+    {
+      "title": "Ivy St",
+      "medium": "acrylic on canvas",
+      "size": "28” x 24”",
+      "price": "",
+      "sold": true,
+      "photos": [
+        "/images/ivy-st-1.jpg"
+      ]
+    }
+  ]
+}

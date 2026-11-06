@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>klb.creative — original paintings by Krista Laray</title>
+<meta name="description" content="Original hand-painted works on canvas by Krista Laray. View the current collection and inquire about a piece or a custom commission.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<meta property="og:title" content="klb.creative — original paintings by Krista Laray">
+<meta property="og:image" content="https://klbcreative.net/images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,480;1,9..144,340;1,9..144,480&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  /* TIP: the whole site's colors are set here. --accent is the green. */
+  :root{
+    --bg: #F1EADA;
+    --paper: #FFFFFF;
+    --ink: #111111;
+    --ink-soft: #5A5A55;
+    --line: #DAD2BD;
+    --accent: #9CA812;     /* logo green */
+    --accent-text: #66700A; /* darker shade of it, for small green text */
+    --accent-soft: #111111;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.55;
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Fraunces', serif;
+    font-weight: 480;
+    letter-spacing: -0.01em;
+  }
+
+  a { color: inherit; }
+
+  img { display: block; max-width: 100%; }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+  @media (max-width: 640px){
+    .wrap { padding: 0 20px; }
+  }
+
+  /* ---- nav ---- */
+  header{
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(241,234,218,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav{
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 32px;
+    max-width: 1180px; margin: 0 auto;
+  }
+  .wordmark{
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 480;
+    font-size: 1.35rem;
+  }
+  .navlinks{ display: flex; gap: 28px; list-style: none; font-size: 0.95rem; }
+  .navlinks a{ text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+  .navlinks a:hover{ border-color: var(--ink); }
+
+  /* ---- hero ---- */
+  .hero{
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: stretch;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-image{ position: relative; overflow: hidden; min-height: 420px; background: var(--paper); }
+  .hero-image img{ width: 100%; height: 100%; object-fit: cover; }
+  .hero-text{
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 64px 56px;
+  }
+  .hero-text .greeting{ color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 18px; max-width: 34ch; }
+  .hero-text h1{ font-size: clamp(2.4rem, 4.2vw, 3.6rem); line-height: 1.05; margin-bottom: 22px; }
+  .hero-text p.sub{ font-size: 1.05rem; color: var(--ink-soft); max-width: 40ch; margin-bottom: 28px; }
+  .btn{
+    display: inline-block; width: fit-content;
+    padding: 13px 26px;
+    border: 1px solid var(--ink);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn:hover{ background: var(--ink); color: var(--bg); }
+
+  @media (max-width: 860px){
+    .hero{ grid-template-columns: 1fr; }
+    .hero-image{ min-height: 320px; order: -1; }
+    .hero-text{ padding: 48px 24px; }
+  }
+
+  /* ---- section heading ---- */
+  .section-head{ padding: 72px 0 36px; }
+  .section-head h2{ font-size: 2rem; margin-bottom: 10px; }
+  .section-head p{ color: var(--ink-soft); max-width: 52ch; }
+
+  /* ---- shop grid ---- */
+  .shop-grid{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 90px;
+  }
+  .piece{
+    background: var(--paper);
+    grid-column: span 3;
+    display: flex;
+    flex-direction: column;
+  }
+  .piece.wide{ grid-column: span 4; }
+  .piece.narrow{ grid-column: span 2; }
+  .piece-image{ aspect-ratio: 4/5; overflow: hidden; background: #F7F4EA; }
+  .piece-image img{ width: 100%; height: 100%; object-fit: cover; }
+  .piece-image.placeholder{
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink-soft); font-size: 0.85rem; text-align: center; padding: 20px;
+    border: 1px dashed var(--line);
+  }
+  .piece-info{ padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 4px; flex-grow: 1; }
+  .piece-info h3{ font-style: italic; font-weight: 480; font-size: 1.25rem; }
+  .piece-meta{ color: var(--ink-soft); font-size: 0.88rem; }
+  .piece-bottom{ margin-top: auto; padding-top: 14px; display: flex; align-items: center; justify-content: space-between; }
+  .price{ font-size: 0.95rem; }
+  .inquire{ font-size: 0.85rem; text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 860px){
+    .shop-grid{ grid-template-columns: repeat(2, 1fr); }
+    .piece, .piece.wide, .piece.narrow{ grid-column: span 1; }
+  }
+  @media (max-width: 520px){
+    .shop-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* ---- about ---- */
+  .about{
+    display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 60px;
+    padding: 20px 0 96px; align-items: center;
+  }
+  .about-image{ aspect-ratio: 4/5; overflow: hidden; background: var(--paper); }
+  .about-image img{ width: 100%; height: 100%; object-fit: cover; }
+  .about-text .label{ color: var(--accent); font-size: 0.9rem; margin-bottom: 14px; }
+  .about-text h2{ font-size: 1.9rem; margin-bottom: 20px; }
+  .about-text p{ margin-bottom: 16px; max-width: 54ch; }
+  .pull{
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: var(--accent);
+    margin: 26px 0;
+    max-width: 20ch;
+  }
+
+  @media (max-width: 860px){
+    .about{ grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  /* ---- contact ---- */
+  .contact{
+    background: var(--accent);
+    color: var(--paper);
+    padding: 90px 0;
+  }
+  .contact .wrap{ display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; }
+  .contact h2{ color: var(--paper); font-size: 2rem; margin-bottom: 18px; }
+  .contact p{ color: var(--accent-soft); max-width: 46ch; margin-bottom: 10px; }
+  .contact-links{ display: flex; flex-direction: column; gap: 12px; justify-content: center; margin-top: 26px; }
+  .contact-links a{
+    text-decoration: none; font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    padding-bottom: 5px; width: fit-content;
+  }
+  .contact-links a:hover{ border-color: var(--paper); }
+  .contact-note{ font-size: 0.85rem; color: var(--accent-soft); margin-top: 24px; max-width: 42ch; }
+
+  .contact-form{ display: flex; flex-direction: column; gap: 6px; }
+  .contact-form label{
+    font-size: 0.82rem; color: var(--accent-soft); margin-top: 14px;
+  }
+  .contact-form input, .contact-form textarea{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.45);
+    color: var(--paper);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    padding: 8px 2px;
+    resize: vertical;
+  }
+  .contact-form input:focus, .contact-form textarea:focus{
+    outline: none;
+    border-bottom-color: var(--paper);
+  }
+  .contact-form input::placeholder, .contact-form textarea::placeholder{ color: var(--accent-soft); }
+  .btn-light{
+    margin-top: 22px;
+    width: fit-content;
+    padding: 12px 28px;
+    background: var(--paper);
+    color: var(--accent);
+    border: none;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .btn-light:hover{ opacity: 0.85; }
+
+  @media (max-width: 860px){
+    .contact .wrap{ grid-template-columns: 1fr; }
+  }
+
+  /* ---- footer ---- */
+  footer{
+    padding: 28px 0;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 0.85rem; color: var(--ink-soft);
+    flex-wrap: wrap; gap: 10px;
+  }
+  footer a{ text-decoration: none; border-bottom: 1px solid transparent; }
+  footer a:hover{ border-color: var(--ink-soft); }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+  }
+
+  /* ---- gallery additions ---- */
+  .piece.filler{ background: var(--paper); }
+  button.piece-image{ position: relative; cursor: zoom-in; border: 0; padding: 0; width: 100%; display: block; }
+  .photo-count{ position: absolute; right: 12px; bottom: 12px; background: rgba(33,31,26,.78); color: var(--paper); font-size: .78rem; padding: 3px 10px; }
+  .price.sold{ color: var(--accent); font-weight: 500; letter-spacing: .04em; }
+  .loading{ background: var(--paper); grid-column: 1 / -1; padding: 48px; color: var(--ink-soft); }
+  @media (max-width: 860px){ .piece.filler{ display: none; } }
+  :focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; }
+  @media (max-width: 640px){ .nav{ padding: 14px 20px; } .navlinks{ gap: 14px; font-size: .85rem; } .wordmark{ font-size: 1.15rem; } }
+
+  dialog.viewer{ border: 0; padding: 0; background: transparent; max-width: 100vw; max-height: 100vh; width: 100%; height: 100%; }
+  dialog.viewer::backdrop{ background: rgba(20,19,15,.88); }
+  .viewer-inner{ display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding: 20px; gap: 14px; color: #FFFFFF; }
+  .viewer img{ max-height: 80vh; max-width: 92vw; object-fit: contain; background: var(--paper); }
+  .viewer-cap{ font-family: 'Fraunces', serif; font-style: italic; }
+  .viewer-controls{ display: flex; gap: 12px; }
+  .viewer button{ font: inherit; background: var(--paper); color: var(--ink); border: 0; padding: 9px 20px; cursor: pointer; }
+  .viewer button:hover{ opacity: .85; }
+
+  /* ---- green section: black text so it stays readable on the logo green ---- */
+  .about-text .label, .pull, .price.sold{ color: var(--accent-text); }
+  :focus-visible{ outline-color: var(--accent-text); }
+  .contact, .contact h2, .contact p{ color: var(--ink); }
+  .contact-links a{ border-bottom-color: rgba(17,17,17,.4); }
+  .contact-links a:hover{ border-bottom-color: var(--ink); }
+  .contact-form input, .contact-form textarea{ color: var(--ink); border-bottom-color: rgba(17,17,17,.5); }
+  .contact-form input:focus, .contact-form textarea:focus{ border-bottom-color: var(--ink); }
+  .btn-light{ background: #fff; color: var(--ink); }
+  .wordmark{ display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+  .wordmark img{ border-radius: 50%; }
+</style>
+
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="wordmark"><img src="images/logo-mark.png" alt="" width="36" height="36">klb.creative</a>
+    <ul class="navlinks">
+      <li><a href="#shop">shop</a></li>
+      <li><a href="#about">about</a></li>
+      <li><a href="#contact">contact</a></li>
+      <li><a href="https://www.instagram.com/klb.creative/" target="_blank" rel="noopener">instagram</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-image">
+      <img src="images/hero.jpg" alt="Original painting by Krista Laray">
+    </div>
+    <div class="hero-text">
+      <p class="greeting">howdy — nice to see you. ya'll been here before? make yourself comfortable.</p>
+      <h1>original paintings, hand on canvas.</h1>
+      <p class="sub">Contemporary work by Krista Laray Ballantyne. One-of-a-kind pieces for homes, offices, and retail spaces.</p>
+      <a href="#shop" class="btn">view the collection</a>
+    </div>
+  </section>
+
+  <section id="shop" class="wrap">
+    <div class="section-head">
+      <h2>the current collection</h2>
+      <p>Prices below are for the original — reach out if you'd like to see more angles or discuss a commission.</p>
+    </div>
+
+    <div class="shop-grid" id="gallery" aria-live="polite"></div>
+    <noscript><p style="padding:20px 0">Please turn on JavaScript to see the collection, or email hello@klbcreative.com.</p></noscript>
+  </section>
+
+  <section id="about" class="wrap">
+    <div class="about">
+      <div class="about-image">
+        <img src="images/krista.jpg" alt="Krista Laray, the artist">
+      </div>
+      <div class="about-text">
+        <p class="label">the artist</p>
+        <h2>Krista Laray</h2>
+        <p>Born in Texas, raised in Colorado.</p>
+        <p class="pull">create before consumption.</p>
+        <p>Available for custom interiors — homes, offices, retail space. Let's create something functional, yet individual.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div>
+        <h2>get in touch</h2>
+        <p>Interested in a piece, or thinking about a commission for a home, office, or retail space? Send a note and I'll get back to you.</p>
+        <p class="contact-note">Sales are handled directly — I'll follow up with details on payment (Zelle/Venmo) and delivery or pickup once we've talked through the piece.</p>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <label for="name">name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit" class="btn-light">send</button>
+
+        <div class="contact-links">
+          <a href="mailto:hello@klbcreative.com">hello@klbcreative.com</a>
+          <a href="https://www.instagram.com/klb.creative/" target="_blank" rel="noopener">@klb.creative on Instagram</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <span>© 2026 klb.creative</span>
+  <a href="https://www.instagram.com/klb.creative/" target="_blank" rel="noopener">Instagram</a>
+</footer>
+
+
+<dialog class="viewer" id="viewer" aria-label="Painting photos">
+  <div class="viewer-inner">
+    <img id="viewer-img" alt="">
+    <div class="viewer-cap" id="viewer-cap"></div>
+    <div class="viewer-controls">
+      <button type="button" id="v-prev">previous</button>
+      <button type="button" id="v-next">next</button>
+      <button type="button" id="v-close">close</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  // The paintings come from content/paintings.json, which you edit at /admin.
+  // You should not need to change anything in this file to add or update artwork.
+  var EMAIL = 'hello@klbcreative.com';
+
+  function rel(p){ return String(p || '').replace(/^\//, ''); }
+  function el(tag, cls, text){
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  var viewer = document.getElementById('viewer');
+  var vImg = document.getElementById('viewer-img');
+  var vCap = document.getElementById('viewer-cap');
+  var current = { photos: [], i: 0, title: '' };
+
+  function showPhoto(){
+    vImg.src = rel(current.photos[current.i]);
+    vImg.alt = current.title + ' painting, photo ' + (current.i + 1);
+    vCap.textContent = current.title + (current.photos.length > 1 ? '  (' + (current.i + 1) + ' of ' + current.photos.length + ')' : '');
+    document.getElementById('v-prev').hidden = document.getElementById('v-next').hidden = current.photos.length < 2;
+  }
+  function openViewer(p){
+    current = { photos: p.photos, i: 0, title: p.title };
+    showPhoto();
+    if (viewer.showModal) viewer.showModal(); else viewer.setAttribute('open','');
+  }
+  document.getElementById('v-prev').onclick = function(){ current.i = (current.i - 1 + current.photos.length) % current.photos.length; showPhoto(); };
+  document.getElementById('v-next').onclick = function(){ current.i = (current.i + 1) % current.photos.length; showPhoto(); };
+  document.getElementById('v-close').onclick = function(){ viewer.close ? viewer.close() : viewer.removeAttribute('open'); };
+  viewer.addEventListener('click', function(e){ if (e.target === viewer) document.getElementById('v-close').click(); });
+
+  function card(p, spanClass){
+    var photos = (p.photos || []).filter(Boolean);
+    var art = el('article', 'piece ' + spanClass);
+
+    var imgWrap;
+    if (photos.length){
+      imgWrap = el('button', 'piece-image');
+      imgWrap.type = 'button';
+      imgWrap.setAttribute('aria-label', 'View photos of ' + p.title);
+      var img = document.createElement('img');
+      img.src = rel(photos[0]); img.alt = p.title + ' painting'; img.loading = 'lazy';
+      imgWrap.appendChild(img);
+      if (photos.length > 1) imgWrap.appendChild(el('span', 'photo-count', photos.length + ' photos'));
+      imgWrap.addEventListener('click', function(){ openViewer({ title: p.title, photos: photos }); });
+    } else {
+      imgWrap = el('div', 'piece-image placeholder', 'photo coming soon');
+    }
+    art.appendChild(imgWrap);
+
+    var info = el('div', 'piece-info');
+    info.appendChild(el('h3', null, p.title));
+    var medium = p.medium || 'acrylic on canvas';
+    info.appendChild(el('p', 'piece-meta', medium + (p.size ? ' \u2014 ' + p.size : '')));
+
+    var bottom = el('div', 'piece-bottom');
+    if (p.sold){
+      bottom.appendChild(el('span', 'price sold', 'SOLD'));
+    } else {
+      bottom.appendChild(el('span', 'price', p.price ? p.price : 'price on request'));
+    }
+    var a = el('a', 'inquire', p.sold ? 'inquire about similar' : 'inquire');
+    var subject = p.sold ? 'Inquiry about work similar to ' + p.title : 'Inquiry about ' + p.title;
+    a.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject);
+    bottom.appendChild(a);
+    info.appendChild(bottom);
+    art.appendChild(info);
+    return art;
+  }
+
+  // Layout: two paintings per row (one per row on phones).
+  fetch('content/paintings.json', { cache: 'no-cache' })
+    .then(function(r){ if (!r.ok) throw new Error('missing'); return r.json(); })
+    .then(function(data){
+      var list = (data && data.paintings) || [];
+      var grid = document.getElementById('gallery');
+      grid.textContent = '';
+      list.forEach(function(p){ grid.appendChild(card(p, '')); });
+      if (list.length % 2 === 1) grid.appendChild(el('div', 'piece filler'));
+      if (!list.length) grid.appendChild(el('p', 'loading', 'New work coming soon.'));
+    })
+    .catch(function(){
+      var grid = document.getElementById('gallery');
+      grid.textContent = '';
+      grid.appendChild(el('p', 'loading', 'The collection could not be loaded. Please email ' + EMAIL + ' and I will send you what is available.'));
+    });
+
+  // Contact form: sends through Formspree once you put your form ID in the form's action.
+  // Until then, it opens the visitor's email app instead.
+  var form = document.querySelector('.contact-form');
+  form.addEventListener('submit', function(e){
+    if (form.action.indexOf('YOUR_FORM_ID') === -1) return;
+    e.preventDefault();
+    var body = form.message.value + '\n\n\u2014 ' + form.name.value + ' (' + form.email.value + ')';
+    location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Message from klbcreative.net') + '&body=' + encodeURIComponent(body);
+  });
+</script>
+</body>
+</html>
