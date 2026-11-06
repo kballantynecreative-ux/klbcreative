@@ -46,18 +46,6 @@
       ]
     },
     {
-      "title": "No Clear Winne",
-      "medium": "acrylic on canvas",
-      "size": "24” x 24”",
-      "price": "$525",
-      "sold": false,
-      "photos": [
-        "/images/IMG_4054.jpeg",
-        "/images/346527A7-BE79-400C-84B8-D07C8BAE34CC.jpg",
-        "/images/1669641E-EE10-4D9F-B2D8-C2932AF6EA25.jpg"
-      ]
-    },
-    {
       "title": "Overgrowth",
       "medium": "acrylic on canvas",
       "size": "30\" x 24\"",
@@ -67,6 +55,18 @@
         "/images/IMG_4471.jpeg",
         "/images/IMG_4475.jpeg",
         "/images/IMG_4474.jpeg"
+      ]
+    },
+    {
+      "title": "No Clear Winner",
+      "medium": "acrylic on canvas",
+      "size": "24” x 24”",
+      "price": "$525",
+      "sold": false,
+      "photos": [
+        "/images/IMG_4054.jpeg",
+        "/images/346527A7-BE79-400C-84B8-D07C8BAE34CC.jpg",
+        "/images/1669641E-EE10-4D9F-B2D8-C2932AF6EA25.jpg"
       ]
     },
     {
