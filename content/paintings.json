@@ -138,6 +138,17 @@
         "/images/IMG_3537.PNG",
         "/images/IMG_3539.PNG"
       ]
+    },
+    {
+      "title": "Tulip Two Step",
+      "medium": "acrylic on canvas",
+      "size": "24\" x 18\"",
+      "price": "$800",
+      "sold": false,
+      "photos": [
+        "/images/IMG_3544.jpeg",
+        "/images/IMG_3545.jpeg"
+      ]
     }
   ]
 }
