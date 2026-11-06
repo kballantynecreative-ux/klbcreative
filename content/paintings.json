@@ -115,6 +115,17 @@
         "/images/IMG_3868.jpeg",
         "/images/IMG_3867.jpeg"
       ]
+    },
+    {
+      "title": "Kuwabatake",
+      "medium": "acrylic on canvas",
+      "size": "32.5\" x 15\" per panel/45\" across all three",
+      "price": "$1,300",
+      "sold": false,
+      "photos": [
+        "/images/IMG_3697 2.jpeg",
+        "/images/IMG_3700 2.jpeg"
+      ]
     }
   ]
 }
