@@ -79,6 +79,30 @@
         "/images/IMG_3639.jpeg",
         "/images/IMG_3640.jpeg"
       ]
+    },
+    {
+      "title": "Watermelon Beach",
+      "medium": "acrylic on canvas",
+      "size": "20\" x 14\"",
+      "price": "$450",
+      "sold": false,
+      "photos": [
+        "/images/IMG_4296.jpeg",
+        "/images/DA7A4489-EDCE-4DCD-B89A-06D14F579553.jpg",
+        "/images/887C83EB-86B6-4A76-BF15-F5320D30DCCE.jpg"
+      ]
+    },
+    {
+      "title": "Storms",
+      "medium": "acrylic on canvas",
+      "size": "20\" x 20\"",
+      "price": "$700",
+      "sold": false,
+      "photos": [
+        "/images/IMG_4389.jpeg",
+        "/images/IMG_4388.jpeg",
+        "/images/IMG_4386.jpeg"
+      ]
     }
   ]
 }
