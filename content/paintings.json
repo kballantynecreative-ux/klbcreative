@@ -46,20 +46,22 @@
       ]
     },
     {
-      "title": "Ivy St",
+      "title": "No Clear Winne",
       "medium": "acrylic on canvas",
-      "size": "28” x 24”",
-      "price": "",
-      "sold": true,
+      "size": "24” x 24”",
+      "price": "$525",
+      "sold": false,
       "photos": [
-        "/images/ivy-st-1.jpg"
+        "/images/IMG_4054.jpeg",
+        "/images/346527A7-BE79-400C-84B8-D07C8BAE34CC.jpg",
+        "/images/1669641E-EE10-4D9F-B2D8-C2932AF6EA25.jpg"
       ]
     },
     {
       "title": "Overgrowth",
       "medium": "acrylic on canvas",
       "size": "30\" x 24\"",
-      "price": "900",
+      "price": "$900",
       "sold": false,
       "photos": [
         "/images/IMG_4471.jpeg",
