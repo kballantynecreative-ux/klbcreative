@@ -103,6 +103,18 @@
         "/images/IMG_4388.jpeg",
         "/images/IMG_4386.jpeg"
       ]
+    },
+    {
+      "title": "Rumpus",
+      "medium": "acrylic on canvas",
+      "size": "16\" x 20\"",
+      "price": "$600",
+      "sold": false,
+      "photos": [
+        "/images/IMG_3866.jpeg",
+        "/images/IMG_3868.jpeg",
+        "/images/IMG_3867.jpeg"
+      ]
     }
   ]
 }
