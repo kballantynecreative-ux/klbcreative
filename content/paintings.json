@@ -58,18 +58,6 @@
       ]
     },
     {
-      "title": "No Clear Winner",
-      "medium": "acrylic on canvas",
-      "size": "24” x 24”",
-      "price": "$525",
-      "sold": false,
-      "photos": [
-        "/images/IMG_4054.jpeg",
-        "/images/346527A7-BE79-400C-84B8-D07C8BAE34CC.jpg",
-        "/images/1669641E-EE10-4D9F-B2D8-C2932AF6EA25.jpg"
-      ]
-    },
-    {
       "title": "Violet Requiem",
       "medium": "acrylic on canvas",
       "size": "24\" x 24\"",
@@ -90,6 +78,18 @@
         "/images/IMG_4296.jpeg",
         "/images/DA7A4489-EDCE-4DCD-B89A-06D14F579553.jpg",
         "/images/887C83EB-86B6-4A76-BF15-F5320D30DCCE.jpg"
+      ]
+    },
+    {
+      "title": "No Clear Winner",
+      "medium": "acrylic on canvas",
+      "size": "24” x 24”",
+      "price": "$525",
+      "sold": false,
+      "photos": [
+        "/images/IMG_4054.jpeg",
+        "/images/346527A7-BE79-400C-84B8-D07C8BAE34CC.jpg",
+        "/images/1669641E-EE10-4D9F-B2D8-C2932AF6EA25.jpg"
       ]
     },
     {
