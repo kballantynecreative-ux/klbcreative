@@ -11,18 +11,17 @@
 <meta property="og:image" content="https://klbcreative.net/images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,480;1,9..144,340;1,9..144,480&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,480;0,9..144,600;1,9..144,340;1,9..144,480&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   /* TIP: the whole site's colors are set here. --accent is the green. */
   :root{
-    --bg: #F1EADA;
-    --paper: #FFFFFF;
-    --ink: #111111;
-    --ink-soft: #5A5A55;
-    --line: #DAD2BD;
-    --accent: #9CA812;     /* logo green */
-    --accent-text: #66700A; /* darker shade of it, for small green text */
-    --accent-soft: #111111;
+    --bg: #FFFFFF;
+    --paper: #F9F9F9;
+    --ink: #131311;
+    --ink-soft: #656560;
+    --line: #DEDEDA;
+    --accent: #2F533A;
+    --accent-soft: #B5B5B0;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -39,7 +38,7 @@
 
   h1, h2, h3, .display {
     font-family: 'Fraunces', serif;
-    font-weight: 480;
+    font-weight: 600;
     letter-spacing: -0.01em;
   }
 
@@ -56,7 +55,7 @@
   /* ---- nav ---- */
   header{
     position: sticky; top: 0; z-index: 20;
-    background: rgba(241,234,218,0.92);
+    background: #A4AF3C;
     backdrop-filter: blur(6px);
     border-bottom: 1px solid var(--line);
   }
@@ -129,7 +128,7 @@
   }
   .piece.wide{ grid-column: span 4; }
   .piece.narrow{ grid-column: span 2; }
-  .piece-image{ aspect-ratio: 4/5; overflow: hidden; background: #F7F4EA; }
+  .piece-image{ aspect-ratio: 4/5; overflow: hidden; background: #FFFFFF; }
   .piece-image img{ width: 100%; height: 100%; object-fit: cover; }
   .piece-image.placeholder{
     display: flex; align-items: center; justify-content: center;
@@ -177,7 +176,7 @@
 
   /* ---- contact ---- */
   .contact{
-    background: var(--accent);
+    background: #131311;
     color: var(--paper);
     padding: 90px 0;
   }
@@ -187,7 +186,7 @@
   .contact-links{ display: flex; flex-direction: column; gap: 12px; justify-content: center; margin-top: 26px; }
   .contact-links a{
     text-decoration: none; font-size: 0.95rem;
-    border-bottom: 1px solid rgba(255,255,255,0.4);
+    border-bottom: 1px solid rgba(246,244,236,0.35);
     padding-bottom: 5px; width: fit-content;
   }
   .contact-links a:hover{ border-color: var(--paper); }
@@ -200,7 +199,7 @@
   .contact-form input, .contact-form textarea{
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(255,255,255,0.45);
+    border-bottom: 1px solid rgba(246,244,236,0.4);
     color: var(--paper);
     font-family: 'Work Sans', sans-serif;
     font-size: 1rem;
@@ -216,8 +215,8 @@
     margin-top: 22px;
     width: fit-content;
     padding: 12px 28px;
-    background: var(--paper);
-    color: var(--accent);
+    background: #2D4F37;
+    color: #FFFFFF;
     border: none;
     font-family: 'Work Sans', sans-serif;
     font-size: 0.95rem;
@@ -263,17 +262,10 @@
   .viewer button{ font: inherit; background: var(--paper); color: var(--ink); border: 0; padding: 9px 20px; cursor: pointer; }
   .viewer button:hover{ opacity: .85; }
 
-  /* ---- green section: black text so it stays readable on the logo green ---- */
-  .about-text .label, .pull, .price.sold{ color: var(--accent-text); }
-  :focus-visible{ outline-color: var(--accent-text); }
-  .contact, .contact h2, .contact p{ color: var(--ink); }
-  .contact-links a{ border-bottom-color: rgba(17,17,17,.4); }
-  .contact-links a:hover{ border-bottom-color: var(--ink); }
-  .contact-form input, .contact-form textarea{ color: var(--ink); border-bottom-color: rgba(17,17,17,.5); }
-  .contact-form input:focus, .contact-form textarea:focus{ border-bottom-color: var(--ink); }
-  .btn-light{ background: #fff; color: var(--ink); }
-  .wordmark{ display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
-  .wordmark img{ border-radius: 50%; }
+  .wordmark{ font-family: "Work Sans", sans-serif; font-style: normal; font-weight: 500; font-size: 1.5rem; text-decoration: underline; text-underline-offset: 3px; }
+  .navlinks{ font-size: 1.1rem; }
+  header{ border-bottom: 0; }
+  @media (max-width: 640px){ .nav{ padding: 14px 20px; } .navlinks{ gap: 14px; font-size: .88rem; } .wordmark{ font-size: 1.2rem; } }
 </style>
 
 </head>
@@ -281,7 +273,7 @@
 
 <header>
   <nav class="nav">
-    <a href="#top" class="wordmark"><img src="images/logo-mark.png" alt="" width="36" height="36">klb.creative</a>
+    <a href="#top" class="wordmark">klb.creative</a>
     <ul class="navlinks">
       <li><a href="#shop">shop</a></li>
       <li><a href="#about">about</a></li>
@@ -450,15 +442,16 @@
     return art;
   }
 
-  // Layout: two paintings per row (one per row on phones).
+  // Layout: same wide / narrow rhythm as before.
   fetch('content/paintings.json', { cache: 'no-cache' })
     .then(function(r){ if (!r.ok) throw new Error('missing'); return r.json(); })
     .then(function(data){
       var list = (data && data.paintings) || [];
       var grid = document.getElementById('gallery');
       grid.textContent = '';
-      list.forEach(function(p){ grid.appendChild(card(p, '')); });
-      if (list.length % 2 === 1) grid.appendChild(el('div', 'piece filler'));
+      var pattern = ['wide', 'narrow', 'narrow', 'wide'];
+      list.forEach(function(p, i){ grid.appendChild(card(p, pattern[i % 4])); });
+      if (list.length % 2 === 1) grid.appendChild(el('div', 'piece filler ' + (pattern[(list.length - 1) % 4] === 'wide' ? 'narrow' : 'wide')));
       if (!list.length) grid.appendChild(el('p', 'loading', 'New work coming soon.'));
     })
     .catch(function(){
