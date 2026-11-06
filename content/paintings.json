@@ -54,6 +54,18 @@
       "photos": [
         "/images/ivy-st-1.jpg"
       ]
+    },
+    {
+      "title": "Overgrowth",
+      "medium": "acrylic on canvas",
+      "size": "30\" x 24\"",
+      "price": "900",
+      "sold": false,
+      "photos": [
+        "/images/IMG_4471.jpeg",
+        "/images/IMG_4475.jpeg",
+        "/images/IMG_4474.jpeg"
+      ]
     }
   ]
 }
