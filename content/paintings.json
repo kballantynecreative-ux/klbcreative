@@ -68,6 +68,17 @@
         "/images/IMG_4475.jpeg",
         "/images/IMG_4474.jpeg"
       ]
+    },
+    {
+      "title": "Violet Requiem",
+      "medium": "acrylic on canvas",
+      "size": "24\" x 24\"",
+      "price": "1,100",
+      "sold": false,
+      "photos": [
+        "/images/IMG_3639.jpeg",
+        "/images/IMG_3640.jpeg"
+      ]
     }
   ]
 }
